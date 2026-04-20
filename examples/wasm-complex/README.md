@@ -149,7 +149,7 @@ __webpack_async_result__();
 /***/ ((module, exports, __webpack_require__) => {
 
 var __webpack_instantiate__ = ([WEBPACK_IMPORTED_MODULE_0]) => {
-	return __webpack_require__.v(exports, module.id, "daa529a2a650ee3943a9", {
+	return __webpack_require__.v(exports, module.id, "cf07fd0bebb4a2f09ee0", {
 		"./memory.js": {
 			"memory": WEBPACK_IMPORTED_MODULE_0.memory
 		},
@@ -164,7 +164,7 @@ __webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __we
 	/* harmony import */ var WEBPACK_IMPORTED_MODULE_1 = __webpack_require__(/*! ./magic-number.js */ 4);
 	var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([WEBPACK_IMPORTED_MODULE_0]);
 	var [WEBPACK_IMPORTED_MODULE_0] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__;
-	await __webpack_require__.v(exports, module.id, "daa529a2a650ee3943a9", {
+	await __webpack_require__.v(exports, module.id, "cf07fd0bebb4a2f09ee0", {
 		"./memory.js": {
 			"memory": WEBPACK_IMPORTED_MODULE_0.memory
 		},
@@ -247,12 +247,6 @@ function getRandomNumber() {
 /******/ 		if (cachedModule !== undefined) {
 /******/ 			return cachedModule.exports;
 /******/ 		}
-/******/ 		// Check if module exists (development only)
-/******/ 		if (__webpack_modules__[moduleId] === undefined) {
-/******/ 			var e = new Error("Cannot find module '" + moduleId + "'");
-/******/ 			e.code = 'MODULE_NOT_FOUND';
-/******/ 			throw e;
-/******/ 		}
 /******/ 		// Create a new module (and put it into the cache)
 /******/ 		var module = __webpack_module_cache__[moduleId] = {
 /******/ 			id: moduleId,
@@ -261,6 +255,12 @@ function getRandomNumber() {
 /******/ 		};
 /******/ 	
 /******/ 		// Execute the module function
+/******/ 		if (!(moduleId in __webpack_modules__)) {
+/******/ 			delete __webpack_module_cache__[moduleId];
+/******/ 			var e = new Error("Cannot find module '" + moduleId + "'");
+/******/ 			e.code = 'MODULE_NOT_FOUND';
+/******/ 			throw e;
+/******/ 		}
 /******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
 /******/ 	
 /******/ 		// Return the exports of the module
@@ -427,8 +427,8 @@ function getRandomNumber() {
 ## Unoptimized
 
 ```
-asset output.js 14.4 KiB [emitted] (name: main)
-asset daa529a2a650ee3943a9.module.wasm 139 bytes [emitted] [immutable] (auxiliary name: main)
+asset output.js 14.3 KiB [emitted] (name: main)
+asset cf07fd0bebb4a2f09ee0.module.wasm 139 bytes [emitted] [immutable] (auxiliary name: main)
 chunk (runtime: main) output.js (main) 696 bytes (javascript) 139 bytes (webassembly) 3.72 KiB (runtime) [entry] [rendered]
   > ./example.js main
   runtime modules 3.72 KiB 6 modules
@@ -444,7 +444,7 @@ webpack X.X.X compiled successfully
 
 ```
 asset output.js 2.71 KiB [emitted] [minimized] (name: main)
-asset 03b5e050bc920dbbb73e.module.wasm 139 bytes [emitted] [immutable] (auxiliary name: main)
+asset 47966e1f5b3cc3c4f5d0.module.wasm 139 bytes [emitted] [immutable] (auxiliary name: main)
 chunk (runtime: main) output.js (main) 696 bytes (javascript) 139 bytes (webassembly) 3.45 KiB (runtime) [entry] [rendered]
   > ./example.js main
   runtime modules 3.45 KiB 5 modules

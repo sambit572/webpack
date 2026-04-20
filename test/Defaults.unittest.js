@@ -4,7 +4,7 @@ require("./helpers/warmup-webpack");
 
 const path = require("path");
 const jestDiff = require("jest-diff").diff;
-const stripVTControlCharacters = require("strip-ansi");
+const stripVTControlCharacters = require("./helpers/stripVTControlCharacters");
 
 /** @typedef {import("../lib/index").Configuration} Configuration */
 /** @typedef {import("../lib/index").WebpackOptionsNormalized} WebpackOptionsNormalized */
@@ -126,6 +126,7 @@ describe("snapshots", () => {
 		    "futureDefaults": false,
 		    "lazyCompilation": undefined,
 		    "outputModule": false,
+		    "sourceImport": false,
 		    "syncWebAssembly": false,
 		  },
 		  "externals": undefined,
@@ -297,6 +298,7 @@ describe("snapshots", () => {
 		        "exprContextRegExp": false,
 		        "exprContextRequest": ".",
 		        "importMeta": true,
+		        "sourceImport": false,
 		        "strictExportPresence": undefined,
 		        "strictThisContextOnImports": false,
 		        "unknownContextCritical": true,
